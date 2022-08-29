@@ -8,6 +8,8 @@ let getComputerChoice = (randomNumber) => {
     return opciones[randomNumber];
   };
 
+console.log("NEW GAME");
+
 function playRound() {
 
 
@@ -17,12 +19,12 @@ function playRound() {
 
   let computerChoice = getComputerChoice(randomNumber);
 
-  let playerSelection = prompt("Choose your weapon:").toUpperCase();
+  let playerSelection = prompt("Choose your weapon: (Rock, Paper or Scissors)").toUpperCase();
 
   while ( !opciones.includes(playerSelection)  )
   {
 
-    playerSelection = prompt("Choose your weapon:").toUpperCase();
+    playerSelection = prompt("Choose your weapon: (Rock, Paper or Scissors)").toUpperCase();
   }
   
 
@@ -65,6 +67,21 @@ function game() {
   } else {
     console.log("%cIt's a tie game! boring...", "color:yellow");
   }
+
+
+  let startOver = prompt("GAME OVER, press y to play again.").toUpperCase();
+
+  
+
+  while (startOver != "Y"){
+    startOver = prompt("GAME OVER, press y to play again.").toUpperCase();
+  }
+
+  if (startOver === "Y"){
+    location.reload();
+  }
+
+
 }
 
 game();
