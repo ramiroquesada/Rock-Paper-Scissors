@@ -8,7 +8,7 @@ let getComputerChoice = (randomNumber) => {
     return opciones[randomNumber];
   };
 
-console.log("NEW GAME");
+console.log("NEW GAME, BEST OF 5");
 
 function playRound() {
 
