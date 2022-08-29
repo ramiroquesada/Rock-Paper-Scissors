@@ -69,12 +69,12 @@ function game() {
   }
 
 
-  let startOver = prompt("GAME OVER, press y to play again.").toUpperCase();
+  let startOver = prompt('GAME OVER, press "y" to play again.').toUpperCase();
 
   
 
   while (startOver != "Y"){
-    startOver = prompt("GAME OVER, press y to play again.").toUpperCase();
+    startOver = prompt('GAME OVER, press "y" to play again.').toUpperCase();
   }
 
   if (startOver === "Y"){
