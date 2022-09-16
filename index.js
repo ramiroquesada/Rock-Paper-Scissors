@@ -54,34 +54,7 @@ function playRound() {
   }
 }
 
-function game() {
-  for (i = 0; i <= 4; i++) {
-    playRound();
-    console.log("You: " + playerScore + " Computer: " + computerScore);
-  }
-
-  if (playerScore > computerScore) {
-    console.log("%cYou defeated the computer, congratulations", "color:green");
-  } else if (computerScore > playerScore) {
-    console.log("%cYou lose versus the computer, fail", "color:red");
-  } else {
-    console.log("%cIt's a tie game! boring...", "color:yellow");
-  }
 
 
-  let startOver = prompt('GAME OVER, press "y" to play again.').toUpperCase();
-
-  
-
-  while (startOver != "Y"){
-    startOver = prompt('GAME OVER, press "y" to play again.').toUpperCase();
-  }
-
-  if (startOver === "Y"){
-    location.reload();
-  }
 
 
-}
-
-game();

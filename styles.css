@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;;
+    
+}
+
+.flexContainer{
+    justify-content: center;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin:  auto;
+    
+}
+
+.title{
+    
+}
+
+.game{
+    border: 2px;    
+    border-style: solid;
+    color: white;
+    padding: 16px 32px;
+    width: 90vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newGameButton{
+    
+    margin: 16vh 32vw;
+    padding: 5vh 6vw;
+    
+    background-color: greenyellow;
+    font-size: 300%;
+    color: rgb(36, 36, 36);
+}
