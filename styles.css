@@ -19,6 +19,7 @@ body{
 }
 
 .title{
+    margin: 30px;
     
 }
 
@@ -28,7 +29,7 @@ body{
     color: white;
     padding: 16px 32px;
     width: 90vw;
-    height: 80vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,10 +37,40 @@ body{
 
 .newGameButton{
     
-    margin: 16vh 32vw;
-    padding: 5vh 6vw;
+    
+    padding: 16px 90px;
     
     background-color: greenyellow;
-    font-size: 300%;
+    font-size: 70px;
     color: rgb(36, 36, 36);
+    cursor: pointer;
+    transition: all ease 0.2s;
 }
+
+.newGameButton:hover{
+    font-size: 75px;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.choiceButton{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    font-size: 150px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+
+.choiceButton:hover{
+    font-size: 180px;
+}
+

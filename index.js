@@ -12,21 +12,18 @@ console.log("NEW GAME, BEST OF 5");
 
 function playRound() {
 
-
-
-
   let randomNumber = Math.floor(Math.random() * opciones.length);
 
   let computerChoice = getComputerChoice(randomNumber);
 
-  let playerSelection = prompt("Choose your weapon: (Rock, Paper or Scissors)").toUpperCase();
+  /* let playerSelection = prompt("Choose your weapon: (Rock, Paper or Scissors)").toUpperCase();
 
   while ( !opciones.includes(playerSelection)  )
   {
 
     playerSelection = prompt("Choose your weapon: (Rock, Paper or Scissors)").toUpperCase();
   }
-  
+   */
 
   
   console.log("Computer plays: " + computerChoice);
@@ -57,4 +54,31 @@ function playRound() {
 
 
 
+let newGameButton = document.querySelector(".newGameButton");
+let choicesButton = document.querySelectorAll(".choiceButton")
 
+let currentSelection ;
+
+function saveSelection(e){
+  currentSelection = e.currentTarget.dataset.value;
+  console.log(currentSelection);
+}
+
+
+
+function startNewGame(){
+  newGameButton.classList.add("hidden")
+  
+  choicesButton.forEach(choiceButton => {
+    choiceButton.classList.remove("hidden");
+    choiceButton.addEventListener("click", saveSelection);
+})
+  
+  
+  
+
+}
+
+newGameButton.addEventListener("click", startNewGame);
+
+choiceButton.addEventListener("click", saveSelection);
