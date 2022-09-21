@@ -10,7 +10,7 @@ let getComputerChoice = (randomNumber) => {
 
 console.log("NEW GAME, BEST OF 5");
 
-function playRound() {
+function playRound(playerSelection) {
 
   let randomNumber = Math.floor(Math.random() * opciones.length);
 
@@ -30,7 +30,7 @@ function playRound() {
 
   if (playerSelection === computerChoice) {
     console.log("Tie");
-  } else if (playerSelection === "ROCK" && computerChoice === "SCISSORS") {
+  } else if (playerSelection === "rock" && computerChoice === "SCISSORS") {
     console.log("You WIN! ROCK beats SCISSORS!");
     playerScore++;
   } else if (playerSelection === "ROCK" && computerChoice === "PAPER") {
@@ -49,6 +49,10 @@ function playRound() {
     console.log("You LOSE! SCISSORS beats ROCK!");
     computerScore++;
   }
+
+  
+
+
 }
 
 
@@ -60,18 +64,28 @@ let choicesButton = document.querySelectorAll(".choiceButton")
 let currentSelection ;
 
 function saveSelection(e){
-  currentSelection = e.currentTarget.dataset.value;
-  console.log(currentSelection);
+  return  e.currentTarget.dataset.value;
 }
 
 
 
 function startNewGame(){
   newGameButton.classList.add("hidden")
-  
   choicesButton.forEach(choiceButton => {
     choiceButton.classList.remove("hidden");
-    choiceButton.addEventListener("click", saveSelection);
+    
+    choiceButton.addEventListener("click", (e) =>{
+
+      let eleccion = e.currentTarget.dataset.value.toUpperCase();
+      console.log(eleccion);
+     
+      playRound(eleccion);
+
+
+
+
+    });
+    
 })
   
   
@@ -81,4 +95,4 @@ function startNewGame(){
 
 newGameButton.addEventListener("click", startNewGame);
 
-choiceButton.addEventListener("click", saveSelection);
+
