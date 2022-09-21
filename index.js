@@ -59,29 +59,27 @@ function playRound(playerSelection) {
 
 
 let newGameButton = document.querySelector(".newGameButton");
-let choicesButton = document.querySelectorAll(".choiceButton")
+let choicesButton = document.querySelectorAll(".choiceButton");
+let chooseWeapon = document.querySelector(".chooseWeapon")
 
 let currentSelection ;
-
-function saveSelection(e){
-  return  e.currentTarget.dataset.value;
-}
-
 
 
 function startNewGame(){
   newGameButton.classList.add("hidden")
   choicesButton.forEach(choiceButton => {
     choiceButton.classList.remove("hidden");
+  
+ chooseWeapon.classList.remove('hidden'); 
     
     choiceButton.addEventListener("click", (e) =>{
 
-      let eleccion = e.currentTarget.dataset.value.toUpperCase();
-      console.log(eleccion);
+      let playerSelection = e.currentTarget.dataset.value.toUpperCase();
+      console.log(playerSelection);
      
-      playRound(eleccion);
+      playRound(playerSelection);
 
-
+      console.log(playerScore)
 
 
     });

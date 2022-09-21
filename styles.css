@@ -20,6 +20,7 @@ body{
 
 .title{
     margin: 30px;
+    font-size: 50px;
     
 }
 
@@ -30,6 +31,33 @@ body{
     padding: 16px 32px;
     width: 90vw;
     height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33%;
+    
+}
+
+.chooseWeapon{
+    font-size:40px;
+}
+
+.game-mid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33%;
+}
+
+.game-bot{
+    height: 33%;
     display: flex;
     justify-content: center;
     align-items: center;
