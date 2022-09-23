@@ -1,147 +1,138 @@
-body{
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: white;;
-    font-family: 'Press Start 2P', cursive;
-    
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-family: "Press Start 2P", cursive;
 }
 
+.flexContainer {
+  justify-content: center;
 
-
-.flexContainer{
-    justify-content: center;
-
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin:  auto;
-    
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
-.title{
-    margin: 30px;
-    font-size: 50px;
-    
+.title {
+  margin: 30px;
+  font-size: 50px;
 }
 
-.game{
-    border: 2px;    
-    border-style: solid;
-    color: white;
-    padding: 16px 32px;
-    width: 90vw;
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.game {
+  border: 2px;
+  border-style: solid;
+  color: white;
+  padding: 16px 32px;
+  width: 90vw;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.game-top{
-    display: flex;
-    justify-content: center;
-    align-items:flex-end;
-    height: 33%;
-    text-align: center;
-    
+.game-top {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 33%;
+  text-align: center;
 }
 
-.chooseWeapon{
-    margin-top: 20px;
-    font-size:40px;
+.chooseWeapon {
+  margin-top: 20px;
+  font-size: 40px;
 }
 
-.game-mid{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 33%;
+.game-mid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 33%;
 }
 
-.winner{
-    margin-bottom: 65px;
-    font-size: 50px;
+.winner {
+  margin-bottom: 65px;
+  font-size: 50px;
 }
 
-.midmid{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.midmid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.game-bot{
-    height: 33%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 33px;
+.game-bot {
+  height: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 33px;
 }
 
-.score{
-    margin-top: 90px;
-    font-size: 66px;
+.score {
+  margin-top: 90px;
+  font-size: 66px;
 }
 
-.message{
-    margin-top: 20px;
+.message {
+  margin-top: 20px;
 }
 
-.newGameButton{
-    font-family: 'Press Start 2P', cursive;
-    font-size: 50px !important;
-    
-    padding: 32px 120px;
-    
-    background-color: greenyellow;
-    font-size: 70px;
-    color: rgb(36, 36, 36);
-    cursor: pointer;
-    transition: all ease 0.2s;
+.newGameButton {
+  font-family: "Press Start 2P", cursive;
+  font-size: 50px !important;
+
+  padding: 32px 120px;
+
+  background-color: greenyellow;
+  font-size: 70px;
+  color: rgb(36, 36, 36);
+  cursor: pointer;
+  transition: all ease 0.2s;
 }
 
-.newGameButton:hover{
-    font-size: 75px;
+.newGameButton:hover {
+  font-size: 75px;
 }
 
-.hidden{
-    display: none !important;
+.hidden {
+  display: none !important;
 }
 
-.choiceButton{
-    border-radius: 50%;
-    height: 250px;
-    width: 250px;
-    font-size: 150px;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    transition: all ease 0.2s;
-    cursor: pointer;
+.choiceButton {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  font-size: 150px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition: all ease 0.2s;
+  cursor: pointer;
 }
 
-
-.choiceButton:hover{
-    font-size: 180px;
+.choiceButton:hover {
+  font-size: 180px;
 }
 
-.win{
-    color: rgb(36, 219, 36);
+.win {
+  color: rgb(36, 219, 36);
 }
 
-.lose{
-    color: rgb(194, 47, 47);
+.lose {
+  color: rgb(194, 47, 47);
 }
 
-
-.playedRounds{
-    margin-top: 40px;
-    color: gray;
+.playedRounds {
+  margin-top: 40px;
+  color: gray;
 }

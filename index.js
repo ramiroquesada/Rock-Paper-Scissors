@@ -18,7 +18,7 @@ let computerPlays = document.querySelector(".computerPlays");
 let score = document.querySelector(".score");
 let winner = document.querySelector(".winner");
 let gameTop = document.querySelector(".game-top");
-let playedRoundsCounter = document.querySelector (".playedRounds");
+let playedRoundsCounter = document.querySelector(".playedRounds");
 
 let currentSelection;
 
@@ -39,7 +39,6 @@ function playRound(playerSelection) {
 
   gameMessage.innerHTML = ``;
 
-  
   computerPlays.innerHTML = `Computer plays ${computerChoice}`;
 
   if (playerSelection === computerChoice) {
@@ -75,8 +74,6 @@ function playRound(playerSelection) {
 
     winner.classList.remove("hidden");
 
-    
-
     newGameButton.classList.remove("hidden");
     newGameButton.innerHTML = `Play Again?`;
 
@@ -90,15 +87,15 @@ function playRound(playerSelection) {
 
     return;
   }
-
 }
 
 function startNewGame() {
   playedRounds = 0;
-  if (playedRounds === 0){playedRoundsCounter.innerHTML = ``;}
+  if (playedRounds === 0) {
+    playedRoundsCounter.innerHTML = ``;
+  }
   playerScore = 0;
   computerScore = 0;
-  
 
   winner.classList.remove("lose");
   winner.classList.add("win");
@@ -121,9 +118,8 @@ function startNewGame() {
 choicesButton.forEach((choiceButton) => {
   choiceButton.addEventListener("click", (e) => {
     let playerSelection = e.currentTarget.dataset.value.toUpperCase();
-    
+
     playRound(playerSelection);
-    
 
     playedRoundsCounter.innerHTML = `Rounds played: ${playedRounds}`;
 
