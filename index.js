@@ -4,14 +4,26 @@ let playerScore = 0;
 
 let computerScore = 0;
 
-let getComputerChoice = (randomNumber) => {
-    return opciones[randomNumber];
-  };
+let playedRounds = 0;
 
-console.log("NEW GAME, BEST OF 5");
+let getComputerChoice = (randomNumber) => {
+  return opciones[randomNumber];
+};
+
+let newGameButton = document.querySelector(".newGameButton");
+let choicesButton = document.querySelectorAll(".choiceButton");
+let chooseWeapon = document.querySelector(".chooseWeapon");
+let gameMessage = document.querySelector(".message");
+let computerPlays = document.querySelector(".computerPlays");
+let score = document.querySelector(".score");
+let winner = document.querySelector(".winner");
+let gameTop = document.querySelector(".game-top");
+let playedRoundsCounter = document.querySelector (".playedRounds");
+
+let currentSelection;
 
 function playRound(playerSelection) {
-
+  playedRounds++;
   let randomNumber = Math.floor(Math.random() * opciones.length);
 
   let computerChoice = getComputerChoice(randomNumber);
@@ -25,72 +37,97 @@ function playRound(playerSelection) {
   }
    */
 
+  gameMessage.innerHTML = ``;
+
   
-  console.log("Computer plays: " + computerChoice);
+  computerPlays.innerHTML = `Computer plays ${computerChoice}`;
 
   if (playerSelection === computerChoice) {
-    console.log("Tie");
-  } else if (playerSelection === "rock" && computerChoice === "SCISSORS") {
-    console.log("You WIN! ROCK beats SCISSORS!");
+    gameMessage.innerHTML = `TIE`;
+  } else if (playerSelection === "ROCK" && computerChoice === "SCISSORS") {
+    gameMessage.innerHTML = `You WIN! ROCK beats SCISSORS!`;
     playerScore++;
   } else if (playerSelection === "ROCK" && computerChoice === "PAPER") {
-    console.log("You LOSE! PAPER beats ROCK!");
+    gameMessage.innerHTML = `You LOSE! PAPER beats ROCK!`;
     computerScore++;
   } else if (playerSelection === "PAPER" && computerChoice === "ROCK") {
-    console.log("You WIN! PAPER beats ROCK!");
+    gameMessage.innerHTML = `You WIN! PAPER beats ROCK!`;
     playerScore++;
   } else if (playerSelection === "PAPER" && computerChoice === "SCISSORS") {
-    console.log("You LOSE! SCISSORS beats PAPER!");
+    gameMessage.innerHTML = `You LOSE! SCISSORS beats PAPER!`;
     computerScore++;
   } else if (playerSelection === "SCISSORS" && computerChoice === "PAPER") {
-    console.log("You WIN! SCISSORS beats PAPER!");
+    gameMessage.innerHTML = `You WIN! SCISSORS beats PAPER!`;
     playerScore++;
   } else if (playerSelection === "SCISSORS" && computerChoice === "ROCK") {
-    console.log("You LOSE! SCISSORS beats ROCK!");
+    gameMessage.innerHTML = `You LOSE! SCISSORS beats ROCK!`;
     computerScore++;
   }
 
-  
+  if (playerScore === 5 || computerScore === 5) {
+    choicesButton.forEach((choiceButton) => {
+      choiceButton.classList.add("hidden");
 
-
-}
-
-
-
-
-let newGameButton = document.querySelector(".newGameButton");
-let choicesButton = document.querySelectorAll(".choiceButton");
-let chooseWeapon = document.querySelector(".chooseWeapon")
-
-let currentSelection ;
-
-
-function startNewGame(){
-  newGameButton.classList.add("hidden")
-  choicesButton.forEach(choiceButton => {
-    choiceButton.classList.remove("hidden");
-  
- chooseWeapon.classList.remove('hidden'); 
-    
-    choiceButton.addEventListener("click", (e) =>{
-
-      let playerSelection = e.currentTarget.dataset.value.toUpperCase();
-      console.log(playerSelection);
-     
-      playRound(playerSelection);
-
-      console.log(playerScore)
-
-
+      chooseWeapon.classList.add("hidden");
     });
+
+    gameTop.classList.add("hidden");
+
+    winner.classList.remove("hidden");
+
     
-})
-  
-  
-  
+
+    newGameButton.classList.remove("hidden");
+    newGameButton.innerHTML = `Play Again?`;
+
+    if (playerScore === 5) {
+      winner.innerHTML = `CONGRATULATIONS, YOU DESTROYED THE IA`;
+      winner.classList.add("win");
+    } else {
+      winner.innerHTML = `NICE TRY HUMAN, ALGORITHMS WON THIS BATTLE`;
+      winner.classList.add("lose");
+    }
+
+    return;
+  }
 
 }
 
+function startNewGame() {
+  playedRounds = 0;
+  if (playedRounds === 0){playedRoundsCounter.innerHTML = ``;}
+  playerScore = 0;
+  computerScore = 0;
+  
+
+  winner.classList.remove("lose");
+  winner.classList.add("win");
+
+  gameTop.classList.remove("hidden");
+  winner.innerHTML = ``;
+  score.innerHTML = ``;
+  gameMessage.innerHTML = ``;
+  computerPlays.innerHTML = ``;
+
+  newGameButton.classList.add("hidden");
+
+  choicesButton.forEach((choiceButton) => {
+    choiceButton.classList.remove("hidden");
+
+    chooseWeapon.classList.remove("hidden");
+  });
+}
+
+choicesButton.forEach((choiceButton) => {
+  choiceButton.addEventListener("click", (e) => {
+    let playerSelection = e.currentTarget.dataset.value.toUpperCase();
+    
+    playRound(playerSelection);
+    
+
+    playedRoundsCounter.innerHTML = `Rounds played: ${playedRounds}`;
+
+    score.innerHTML = `Player ${playerScore} - ${computerScore} Computer`;
+  });
+});
 newGameButton.addEventListener("click", startNewGame);
-
-
