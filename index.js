@@ -98,7 +98,7 @@ function startNewGame() {
   computerScore = 0;
 
   winner.classList.remove("lose");
-  winner.classList.add("win");
+  winner.classList.remove("win");
 
   gameTop.classList.remove("hidden");
   winner.innerHTML = ``;

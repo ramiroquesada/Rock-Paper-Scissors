@@ -15,11 +15,12 @@ body {
   display: flex;
   flex-direction: column;
   margin: auto;
+  height: 95vh;
 }
 
 .title {
   margin: 30px;
-  font-size: 50px;
+  font-size: 45px;
 }
 
 .game {
@@ -39,7 +40,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 33%;
+  
   text-align: center;
 }
 
@@ -53,11 +54,13 @@ body {
   justify-content: center;
   align-items: center;
   height: 33%;
+  margin-bottom: 2rem;
 }
 
 .winner {
   margin-bottom: 65px;
-  font-size: 50px;
+  font-size: 40px;
+  text-align: center;
 }
 
 .midmid {
@@ -73,12 +76,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 33px;
+  font-size: 25px;
 }
 
 .score {
   margin-top: 90px;
-  font-size: 66px;
+  font-size: 50px;
+  text-align: center;
 }
 
 .message {
@@ -96,6 +100,7 @@ body {
   color: rgb(36, 36, 36);
   cursor: pointer;
   transition: all ease 0.2s;
+  margin-bottom: 4rem;
 }
 
 .newGameButton:hover {
@@ -130,6 +135,7 @@ body {
 
 .lose {
   color: rgb(194, 47, 47);
+  font-size: 35px;
 }
 
 .playedRounds {
