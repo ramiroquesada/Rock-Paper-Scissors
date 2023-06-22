@@ -123,6 +123,7 @@ body {
   background-color: transparent;
   transition: all ease 0.2s;
   cursor: pointer;
+	border: 1px solid black;
 }
 
 .choiceButton:hover {
@@ -141,4 +142,16 @@ body {
 .playedRounds {
   margin-top: 40px;
   color: gray;
+}
+
+.losemsg{
+	color: rgb(255, 97, 97);
+}
+
+.winmsg{
+	color: rgb(83, 185, 83);
+}
+
+.tiemsg{
+	color: rgb(185, 185, 84);
 }

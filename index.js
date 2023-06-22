@@ -42,24 +42,24 @@ function playRound(playerSelection) {
   computerPlays.innerHTML = `Computer plays ${computerChoice}`;
 
   if (playerSelection === computerChoice) {
-    gameMessage.innerHTML = `TIE`;
+    gameMessage.innerHTML = `<span class="tiemsg">TIE!</span>`;
   } else if (playerSelection === "ROCK" && computerChoice === "SCISSORS") {
-    gameMessage.innerHTML = `You WIN! ROCK beats SCISSORS!`;
+    gameMessage.innerHTML = `You <span class="winmsg">WIN!</span> ROCK beats SCISSORS!`;
     playerScore++;
   } else if (playerSelection === "ROCK" && computerChoice === "PAPER") {
-    gameMessage.innerHTML = `You LOSE! PAPER beats ROCK!`;
+    gameMessage.innerHTML = `You <span class="losemsg">LOSE!</span> PAPER beats ROCK!`;
     computerScore++;
   } else if (playerSelection === "PAPER" && computerChoice === "ROCK") {
-    gameMessage.innerHTML = `You WIN! PAPER beats ROCK!`;
+    gameMessage.innerHTML = `You <span class="winmsg">WIN!</span> PAPER beats ROCK!`;
     playerScore++;
   } else if (playerSelection === "PAPER" && computerChoice === "SCISSORS") {
-    gameMessage.innerHTML = `You LOSE! SCISSORS beats PAPER!`;
+    gameMessage.innerHTML = `You <span class="losemsg">LOSE!</span> SCISSORS beats PAPER!`;
     computerScore++;
   } else if (playerSelection === "SCISSORS" && computerChoice === "PAPER") {
-    gameMessage.innerHTML = `You WIN! SCISSORS beats PAPER!`;
+    gameMessage.innerHTML = `You <span class="winmsg">WIN!</span> SCISSORS beats PAPER!`;
     playerScore++;
   } else if (playerSelection === "SCISSORS" && computerChoice === "ROCK") {
-    gameMessage.innerHTML = `You LOSE! SCISSORS beats ROCK!`;
+    gameMessage.innerHTML = `You <span class="losemsg">LOSE!</span> SCISSORS beats ROCK!`;
     computerScore++;
   }
 
